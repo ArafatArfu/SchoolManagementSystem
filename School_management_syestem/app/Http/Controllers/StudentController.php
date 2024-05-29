@@ -143,7 +143,7 @@ class StudentController extends Controller
                 unlink('upload/profile/' . $student->profile_pic);          
             }
                 //end to remove old profile pic
-                
+
             $extention = $request->file('profile_pic')->getClientOriginalExtension();
             $file = $request->file('profile_pic');
             $randomStr = date('Ymdhis').Str::random(20);
@@ -176,6 +176,23 @@ class StudentController extends Controller
 
         return redirect('admin/student/list')->with('success',"Student Successfully Updated");
 
+    }
+
+
+    public function delete($id)
+    {
+        $getRecord = User::getSingle($id);
+        if(!empty($getRecord))
+        {
+            $getRecord->is_delete = 1;
+            $getRecord->save();
+
+            return redirect()->back()->with('success',"Student Successfully Deleted");
+        }
+        else
+        {
+            abort(404);
+        }
     }
 
 

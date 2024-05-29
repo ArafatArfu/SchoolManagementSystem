@@ -78,7 +78,8 @@ class User extends Authenticatable
 
     static function getStudent()
     {
-      $return = User::select('users.*')
+      $return = User::select('users.*', 'class.name as class_name')
+                    ->join('class','class.id', '=', 'users.class_id', 'left')
                     ->where('users.user_type', '=', 3)
                     ->where('users.is_delete', '=', 0);
 
@@ -99,7 +100,7 @@ class User extends Authenticatable
     }
 
 
-    
+
     public function getProfile()
     {
         if (!empty($this->profile_pic) && file_exists('upload/profile/' . $this->profile_pic)) {
