@@ -34,11 +34,15 @@ Route::group(['middleware' => 'admin'],function(){
     Route::post('admin/admin/edit/{id}',[AdminController::class,'update']);
     Route::get('admin/admin/delete/{id}',[AdminController::class,'delete']);
 
-    //Studet
+    //Studet list,add,insert,edit,delete
 
     Route::get('admin/student/list',[StudentController::class,'list']);
     Route::get('admin/student/add',[StudentController::class,'add']);
     Route::post('admin/student/add',[StudentController::class,'insert']);
+    Route::get('admin/student/edit/{id}',[StudentController::class,'edit']);
+    Route::post('admin/student/edit/{id}',[StudentController::class,'update']);
+    ;
+
 
     //CLASS URL
 

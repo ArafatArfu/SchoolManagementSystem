@@ -46,7 +46,7 @@ class AdminController extends Controller
         if(!empty($data['getRecord']))
         {
             $data['header_title'] = "Edit Admin";
-            return view('admin.admin.Edit',$data);
+            return view('admin.admin.edit',$data);
         }
         else
         {
