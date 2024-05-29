@@ -1,0 +1,21 @@
+Create student required data list:
+
+Admission Number
+Roll Number
+class_id
+First Name // Name already get
+Last Name
+Gender
+Date Of Birth
+Caste
+Religion
+Mobile Number
+Admission Date
+Student Photo
+Blood Group
+Height
+Weight
+
+Email //Already get
+Password //Already get
+status
